@@ -1,0 +1,8 @@
+# Build results and symlinks
+/result
+/result-*
+
+# Editor backups
+*~
+*.swp
+*.swo
