@@ -7,8 +7,6 @@
     libnotify
   ];
   
-  programs.zsh.enable = true;
-  
   # Disable default packages:
   environment.defaultPackages = [];
   documentation.doc.enable = false;

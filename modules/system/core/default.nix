@@ -14,5 +14,6 @@
     ./time.nix
     ./users.nix
     ./version.nix
+    ./zsh.nix
   ];
 }

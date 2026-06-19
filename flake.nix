@@ -39,7 +39,7 @@
           specialArgs = { inherit inputs; };
           modules = [            
             ./hosts/irkalla/hardware-configuration.nix
-            ./modules/nixos/default.nix
+            ./modules/system/default.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = { inherit inputs; };
