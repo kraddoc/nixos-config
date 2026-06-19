@@ -5,6 +5,8 @@
     l = "eza";
     ls = "eza -l";
     lsa = "eza -al";
+    lst = "eza -T";
+    lsat = "eza -aT";
     cat = "bat";
     gst = "git status";
     nxsw = "nh os switch";

@@ -16,7 +16,8 @@
       - `z part/of/path`   : Jump to a frequently used directory
       - `..`               : Go up one directory
       - `...`              : Go up two directories, etc.
-      
+      - `l|ls|lsa|lst|lsat`: File view using eza
+
       ## NixOS Management
       - `nxsw`             : `nh os switch` (rebuild system)
       - `nxupd`            : `nh os switch -u` (update & rebuild)
