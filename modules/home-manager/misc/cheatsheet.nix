@@ -20,6 +20,6 @@
       ## System Management
       - `switch`           : `nh os switch` (rebuild system)
       - `update`           : `nh os switch -u` (update & rebuild)
-    ''
+    '';
   };
 }
