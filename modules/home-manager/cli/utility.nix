@@ -4,9 +4,12 @@
   home.packages = with pkgs; [
     procs # process viewer
     duf # disk usage viewer
+    dust # directory disk usage viewer
+    sd # sed replacement
   ];
   
   programs = {
+    # system monitor
     bottom = {
       enable = true;
       settings = {
@@ -15,6 +18,7 @@
       };
     };
     
+    # ls replacement
     eza = {
       enable = true;
       enableZshIntegration = true;
@@ -26,12 +30,21 @@
       ];
     };
     
+    #cd replacement
     zoxide.enable = true;
     zoxide.enableZshIntegration = true;
     
+    # fuzzy finder
     fzf.enable = true;
     fzf.enableZshIntegration = true;
     
+    # cat replacement
     bat.enable = true;
+    
+    # find replacement
+    fd.enable = true;
+    
+    # grep replacement
+    ripgrep.enable = true;
   };
 }

@@ -10,6 +10,7 @@
       zsh-users/zsh-history-substring-search
       MichaelAquilina/zsh-auto-notify
       hlissner/zsh-autopair
+      MichaelAquilina/zsh-you-should-use
     ''];
   };
 }
