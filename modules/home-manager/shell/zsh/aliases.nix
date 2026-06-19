@@ -7,8 +7,9 @@
     lsa = "eza -al";
     cat = "bat";
     gst = "git status";
-    switch = "nh os switch";
-    update = "nh os switch -u";
+    nxsw = "nh os switch";
+    nxupd = "nh os switch -u";
+    nxclr = "nh clean all --keep 5";
     ".." = "z ..";
     "..." = "z ../..";
     "...." = "z ../../..";

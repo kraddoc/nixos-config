@@ -18,9 +18,10 @@
       - `...`              : Go up two directories, etc.
       
       ## NixOS Management
-      - `switch`           : `nh os switch` (rebuild system)
-      - `update`           : `nh os switch -u` (update & rebuild)
-      
+      - `nxsw`             : `nh os switch` (rebuild system)
+      - `nxupd`            : `nh os switch -u` (update & rebuild)
+      - `nxcl`             : `nh clean all --keep 5` (clean generations)
+
       ## System Management
       - `ps`               : process list visualizer using procs
       - `pst`              : process tree visualizer procs
