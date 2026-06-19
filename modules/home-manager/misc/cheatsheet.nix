@@ -25,7 +25,13 @@
       - `ps`               : process list visualizer using procs
       - `pst`              : process tree visualizer procs
       - `btm`              : process/system visualizer
-      - `df`              : disk usage visualizer using duf
+      - `df`               : disk usage visualizer using duf
+      - `du`               : directory disk usage visualizer using dust
+      
+      ## Tools
+      - `ripgrep`          : grep alternative
+      - `sd`               : sed alternative
+      - `fd`               : find alternative
     '';
   };
 }
