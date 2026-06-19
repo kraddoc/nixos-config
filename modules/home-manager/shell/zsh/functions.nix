@@ -22,5 +22,26 @@
       git add .
       git commit -m "$1"
     }
+    
+    # Display the cheatsheet, optionally search with fzf
+    cheat() {
+      local cheatsheet="$HOME/.config/cheatsheet.md"
+      if [ ! -f "$cheatsheet" ]; then
+        echo "Cheatsheet not found at $cheatsheet"
+        return 1
+      fi
+
+      if [ "$1" = "-s" ] || [ "$1" = "--search" ]; then
+        # Search mode: use fzf to filter lines (exclude section headers if you like)
+        cat "$cheatsheet" | fzf --preview 'echo {}' --preview-window=up:3 --height=40%
+      else
+        # Display mode: use bat if available, else cat
+        if command -v bat &> /dev/null; then
+          bat --style=plain --color=always "$cheatsheet"
+        else
+          cat "$cheatsheet"
+        fi
+      fi
+    }
     '';
 }
