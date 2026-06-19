@@ -9,7 +9,8 @@
     gst = "git status";
     nxsw = "nh os switch";
     nxupd = "nh os switch -u";
-    nxclr = "nh clean all --keep 5";
+    nxcl = "nh clean all --keep 5";
+    cd = "z";
     ".." = "z ..";
     "..." = "z ../..";
     "...." = "z ../../..";
