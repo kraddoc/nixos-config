@@ -43,5 +43,29 @@
         fi
       fi
     }
+    
+    # Smart Zellij attach with fzf picker
+    if [ -z "$ZELLIJ" ]; then
+      sessions=$(zellij list-sessions 2>/dev/null)
+      if [ -n "$sessions" ]; then
+        # If multiple sessions, let user pick with fzf
+        if echo "$sessions" | wc -l | rg -q '^1$'; then
+          # Only one session – attach directly
+          zellij attach -c
+        else
+          # Multiple sessions – show a picker
+          chosen=$(echo "$sessions" | fzf --prompt="Select Zellij session: " --height=10)
+          if [ -n "$chosen" ]; then
+            zellij attach -c "$chosen"
+          else
+            # If user cancels, just create a new session
+            zellij
+          fi
+        fi
+      else
+        # No sessions – create new one
+        zellij
+      fi
+    fi
     '';
 }
