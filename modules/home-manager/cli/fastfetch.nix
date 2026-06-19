@@ -1,98 +1,114 @@
 { config, pkgs, ... }:
 
 {
-  # Enable fastfetch and install it via Home-Manager
   programs.fastfetch = {
     enable = true;
 
-    # This takes a Nix attribute set that gets converted to JSON
     settings = {
       logo = {
-        source = "nixos";
-        # Use iterm2 inline images for a smooth logo
-        type = "iterm2";
+        source = "nixos_small";
+        padding = {
+          right = 2;
+          left = 1;
+          top = 1;
+        };
+        type = "auto"; 
       };
 
       display = {
-        color = {
-          keys = "#f5c2e7";      # soft pink
-          title = "#f9e2af";     # warm yellow
-          separator = "#89b4fa"; # blue
-        };
-        separator = " » ";
+        separator = " ";
       };
 
       modules = [
         {
           type = "title";
-          format = "{user}@{hostname}";
+          format = "{user-name-colored}❄️{host-name-colored}";
+          outputColor = "cyan";
         }
         {
-          type = "separator";
+          type = "custom";
+          key = "  ";
         }
         {
           type = "os";
-          key = "OS";
-          keyColor = "pink";
+          key = "╭󱄅 »";
+          format = "{pretty-name}";
         }
         {
           type = "kernel";
-          key = "Kernel";
+          key = "├ »";
         }
         {
           type = "uptime";
-          key = "Uptime";
+          key = "╰ »";
         }
         {
-          type = "packages";
-          key = "Packages";
-          format = "{count} (nix)";
+          type = "custom";
+          key = "  ";
+        }
+        { 
+          type = "wm";
+          key = "╭ »";
+          format = "{pretty-name}";
         }
         {
           type = "shell";
-          key = "Shell";
-          format = "{name} {version}";
+          key = "├ »";
+          format = "{pretty-name}";
         }
         {
           type = "terminal";
-          key = "Terminal";
+          key = "├ »";
+          format = "{pretty-name}";
+        }
+        {
+          type = "packages";
+          key = "╰ »";
+        }
+        {
+          type = "custom";
+          key = "  ";
         }
         {
           type = "cpu";
-          key = "CPU";
-          format = "{name} ({cores} cores)";
+          key = "╭ »";
+          format = "{name}";
         }
         {
           type = "gpu";
-          key = "GPU";
+          key = "├󰮃 »";
           format = "{name}";
         }
         {
           type = "memory";
-          key = "Memory";
-          format = "{used} / {total}";
+          key = "├ »";
+          format = "{used}/{total}";
         }
         {
           type = "disk";
-          key = "Disk (/home)";
-          format = "{used} / {total}";
-          path = "/home";
+          key = "├󰋊 »";
+          format = "{size-used}/{size-total}";
         }
         {
-          type = "separator";
+          type = "monitor";
+          key = "╰󰍹 »";
+          format = "{width}x{height} px @ {refresh-rate} Hz";
         }
         {
           type = "custom";
-          key = "NixOS";
-          format = "❄️  Flakes + Home-Manager";
-          keyColor = "blue";
+          key = "  ";
+        }
+        {
+          type = "media";
+          key = "";
+          player = "spotify";
+          format = "{combined}";
+          keyColor = "green";
         }
       ];
     };
   };
 
-  # We still need chafa for image rendering (if you want it)
-  home.packages = with pkgs; [
-    # chafa
-  ];
+  # chafa is still needed for image rendering if you use 'auto' or 'iterm2'
+  # home.packages = with pkgs; [ chafa ];
 }

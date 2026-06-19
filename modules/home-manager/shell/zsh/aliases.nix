@@ -9,6 +9,7 @@
     lsat = "eza -aT";
     cat = "bat";
     gst = "git status";
+    ff = "fastfetch";
     nxsw = "nh os switch";
     nxupd = "nh os switch -u";
     nxcl = "nh clean all --keep 5";
