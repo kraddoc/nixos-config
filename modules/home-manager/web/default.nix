@@ -3,6 +3,6 @@
 {
   imports = [
     ./zen/default.nix
-    ./telegram.nix
+    ./messengers/default.nix
   ];
 }
