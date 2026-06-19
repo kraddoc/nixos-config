@@ -10,5 +10,6 @@
     ./terminal/default.nix
     ./web/default.nix
     ./misc/default.nix
+    ./tui/default.nix
   ];
 }
