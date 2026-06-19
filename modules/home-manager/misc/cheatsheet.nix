@@ -17,9 +17,15 @@
       - `..`               : Go up one directory
       - `...`              : Go up two directories, etc.
       
-      ## System Management
+      ## NixOS Management
       - `switch`           : `nh os switch` (rebuild system)
       - `update`           : `nh os switch -u` (update & rebuild)
+      
+      ## System Management
+      - `ps`               : process list visualizer using procs
+      - `pst`              : process tree visualizer procs
+      - `btm`              : process/system visualizer
+      - `df`              : disk usage visualizer using duf
     '';
   };
 }
