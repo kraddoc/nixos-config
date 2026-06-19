@@ -43,5 +43,26 @@
         fi
       fi
     }
+    
+    # Smart Zellij attach with ripgrep and fzf picker
+    zattach() {
+      if [ -z "$ZELLIJ" ]; then
+        sessions=$(zellij list-sessions -rns 2>/dev/null)
+        if [ -n "$sessions" ]; then
+          if echo "$sessions" | wc -l | rg -q '^1$'; then
+            zellij attach -c
+          else
+            chosen=$(echo "$sessions" | fzf --prompt="Select Zellij session: " --height=10)
+            if [ -n "$chosen" ]; then
+              zellij attach -c "$chosen"
+            else
+              zellij
+            fi
+          fi
+        else
+          zellij
+        fi
+      fi
+    }
     '';
 }

@@ -12,6 +12,9 @@
       - `gac "message"`    : Add all and commit (no push)
       - `gs`               : Git statu
       
+      ## Terminal
+      - `za`               : Start/attach to zellij session
+      
       ## Navigation
       - `z part/of/path`   : Jump to a frequently used directory
       - `..`               : Go up one directory

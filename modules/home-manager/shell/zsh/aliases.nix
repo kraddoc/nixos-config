@@ -8,6 +8,7 @@
     lst = "eza -T";
     lsat = "eza -aT";
     cat = "bat";
+    za = "zattach";
     gst = "git status";
     ff = "fastfetch";
     nxsw = "nh os switch";

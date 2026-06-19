@@ -3,7 +3,7 @@
 {
   programs.zellij = {
     enable = true;
-    enableZshIntegration = true;
-    attachExistingSession = true;
+    # enableZshIntegration = true; - using my own zsh startup
+    # attachExistingSession = true;
   };
 }
