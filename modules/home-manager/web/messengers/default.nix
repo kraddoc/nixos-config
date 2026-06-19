@@ -3,6 +3,5 @@
 {
   imports = [
     ./telegram.nix
-    ./session.nix
   ];
 }
