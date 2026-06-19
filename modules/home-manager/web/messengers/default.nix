@@ -3,6 +3,6 @@
 {
   imports = [
     ./telegram.nix
-    ./signal.nix
+    ./session.nix
   ];
 }
