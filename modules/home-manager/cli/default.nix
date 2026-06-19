@@ -5,5 +5,6 @@
     ./nh.nix
     ./git.nix
     ./utility.nix
+    ./fastfetch.nix
   ];
 }
