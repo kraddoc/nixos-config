@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./yazi.nix
-    ./nvim/default.nix
+    ./nvim.nix
   ];
 }
