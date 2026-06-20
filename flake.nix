@@ -22,9 +22,13 @@
       url = "github:kartavkun/zapret-discord-youtube";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ flake-parts, home-manager, zen-browser, zapret-discord-youtube, ... }:
+  outputs = inputs@{ flake-parts, home-manager, zen-browser, zapret-discord-youtube, nvf, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
       imports = [
