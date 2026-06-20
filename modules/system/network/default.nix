@@ -5,5 +5,6 @@
     ./zapret-discord-youtube.nix
     ./networking.nix
     ./firewall.nix
+    ./amnezia.nix
   ];
 }
