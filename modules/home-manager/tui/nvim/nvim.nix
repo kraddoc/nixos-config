@@ -10,6 +10,11 @@
   programs.nvf = {
     enable = true;
     
+    options = {
+      tabstop = 2;
+      shiftwidth = 0;
+    };
+    
     settings.vim = {
       viAlias = true;
       vimAlias = true;
