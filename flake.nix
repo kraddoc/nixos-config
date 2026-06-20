@@ -52,9 +52,6 @@
               home-manager.useUserPackages = true;
               home-manager.users.nergal = import ./modules/home-manager/default.nix;
             }
-            {
-              nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
-            }
           ];
         };
       };
