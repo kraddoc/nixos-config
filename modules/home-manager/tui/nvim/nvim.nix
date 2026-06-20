@@ -3,14 +3,29 @@
 {
   imports = [ inputs.nvf.homeManagerModules.default ];
   
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+  
   programs.nvf = {
     enable = true;
     
-    settings = {
-      vim.viAlias = true;
-      vim.vimAlias = true;
-      vim.lsp = {
-        enable = true;
+    settings.vim = {
+      viAlias = true;
+      vimAlias = true;
+      lsp.enable = true;
+
+      treesitter.enable = true;
+      telescope.enable = true;
+      statusline.lualine.enable = true;
+      autocomplete.nvim-cmp.enable = true;
+
+      languages = {
+        enableTreesitter = true;
+        enableFormat = true;
+        enableLSP = true;
+
+        nix.enable = true;
       };
     };
   };
