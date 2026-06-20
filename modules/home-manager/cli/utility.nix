@@ -46,5 +46,8 @@
     
     # grep replacement
     ripgrep.enable = true;
+    
+    # tldr in rust
+    tealdeer.enable = true;
   };
 }

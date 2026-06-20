@@ -37,6 +37,7 @@
       - `ripgrep`          : grep alternative
       - `sd`               : sed alternative
       - `fd`               : find alternative
+      - `tldr`             : simpler man using tealdeer
       
       ## Terminal Hotkeys
       - 'Ctrl+R'               : history substring search
