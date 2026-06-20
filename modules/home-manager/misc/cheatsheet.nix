@@ -37,6 +37,9 @@
       - `ripgrep`          : grep alternative
       - `sd`               : sed alternative
       - `fd`               : find alternative
+      
+      ## Terminal Hotkeys
+      - 'Ctrl+R'               : history substring search
     '';
   };
 }
