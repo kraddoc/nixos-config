@@ -23,7 +23,6 @@
       languages = {
         enableTreesitter = true;
         enableFormat = true;
-        enableLSP = true;
 
         nix.enable = true;
       };
