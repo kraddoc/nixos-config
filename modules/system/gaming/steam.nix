@@ -4,9 +4,8 @@
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
-    extraCombatPackages = with pkgs; [
+    extraCompatPackages = with pkgs; [
       proton-ge-bin
-      
     ];
   };
   programs.gamemode.enable = true;
