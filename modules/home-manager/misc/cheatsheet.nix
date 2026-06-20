@@ -30,7 +30,7 @@
       - `ps`               : process list visualizer using procs
       - `pst`              : process tree visualizer procs
       - `btm`              : process/system visualizer
-      - `df`               : disk usage visualizer using duf
+      - `df`               : disk usage visualizer using dysk
       - `du`               : directory disk usage visualizer using dust
       
       ## Tools

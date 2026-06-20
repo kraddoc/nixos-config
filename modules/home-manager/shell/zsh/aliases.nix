@@ -21,7 +21,7 @@
     "....." = "z ../../../..";
     ps = "procs";
     pst = "procs -t";
-    df = "duf";
+    df = "dysk";
     du = "dust";
     cc = "clear";
   };

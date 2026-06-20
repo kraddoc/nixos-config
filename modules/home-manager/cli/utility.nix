@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     procs # process viewer
-    duf # disk usage viewer
+    dysk # disk usage viewer
     dust # directory disk usage viewer
     sd # sed replacement
   ];
