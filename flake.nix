@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -28,7 +29,7 @@
     };
   };
 
-  outputs = inputs@{ flake-parts, home-manager, zen-browser, zapret-discord-youtube, nvf, ... }:
+  outputs = inputs@{ flake-parts, home-manager, zen-browser, zapret-discord-youtube, nvf, nix-cachyos-kernel, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
       imports = [
@@ -50,6 +51,9 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.nergal = import ./modules/home-manager/default.nix;
+            }
+            {
+              nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
             }
           ];
         };
