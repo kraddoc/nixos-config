@@ -48,6 +48,15 @@
     ripgrep.enable = true;
     
     # tldr in rust
-    tealdeer.enable = true;
+    tealdeer = {
+      enable = true;
+      enableAutoUpdates = true;
+      settings.compact = true;
+      settings.use_pager = true;
+      settings.updates = {
+        auto_update = true;
+        auto_update_interval_hours = 24;
+      };
+    };
   };
 }
