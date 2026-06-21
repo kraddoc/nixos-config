@@ -189,6 +189,7 @@
       "boards.4channel.org" 
       "rutracker.org"
       "t.me"
+      "telegram.org"
     ];
   };
 }
