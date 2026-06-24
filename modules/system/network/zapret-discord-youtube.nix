@@ -190,6 +190,16 @@
       "rutracker.org"
       "t.me"
       "telegram.org"
+      "qnode.qsdb.ru"
+      "forumstatic.ru"
+      "i.imgur.com"
+      "forum-top.ru"
+      "img.rpgtop.su"
+      "rusff.me"
+      "js.hcaptcha.com"
+      "hcaptcha.com"
+      "vimjoyer.com"
+      "gelbooru.com"
     ];
   };
 }
