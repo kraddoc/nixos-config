@@ -40,7 +40,7 @@
       - `tldr`             : simpler man using tealdeer
       
       ## Terminal Hotkeys
-      - 'Ctrl+R'               : history substring search
+      - `Ctrl+R`               : history substring search
     '';
   };
 }
