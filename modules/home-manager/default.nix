@@ -12,5 +12,6 @@
     ./web/default.nix
     ./misc/default.nix
     ./tui/default.nix
+    ./office/default.nix
   ];
 }

@@ -2,7 +2,7 @@
 
 {  
   imports = [
-    superseedr.homeManagerModules.default
+    inputs.superseedr.homeManagerModules.default
   ];
 
   programs.superseedr.enable = true;
