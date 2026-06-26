@@ -6,6 +6,7 @@
     settings = {
       editorWindowMode = false;
       titlebar = "custom";
+      UITheme = "theme-contrast-dark";
     };
   };
 }
