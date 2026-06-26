@@ -26,9 +26,13 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    superseedr = {
+      url = "path:/home/nergal/Projects/Flakes/superseedr-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ flake-parts, home-manager, zen-browser, zapret-discord-youtube, nvf, ... }:
+  outputs = inputs@{ flake-parts, home-manager, zen-browser, zapret-discord-youtube, nvf, superseedr, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
       imports = [
