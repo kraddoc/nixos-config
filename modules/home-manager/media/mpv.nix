@@ -68,8 +68,8 @@
       
       # Screenshots
       screenshot-format = "png";
-      screenshot-template = "mpv-%F_%T";
-      screenshot-directory = "$HOME/Pictures/Screenshots/MPV";
+      screenshot-template = "mpv-%f-%wH.%wM.%wS.%wT-#%#00n";
+      screenshot-directory = "~/Pictures/Screenshots/MPV";
       
       # OSD and interface
       osd-level = 1;
