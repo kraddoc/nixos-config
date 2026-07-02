@@ -26,10 +26,9 @@
       # Scripts are now passed here instead of using a wrapper
       scripts = with pkgs.mpvScripts; [
         sponsorblock-minimal 
-        modernz
+        uosc
         autoload
         autodeint
-        dynamic-crop
         visualizer
         thumbfast
       ];
@@ -68,7 +67,7 @@
       
       # Screenshots
       screenshot-format = "png";
-      screenshot-template = "mpv-%f-%wH.%wM.%wS.%wT-#%#00n";
+      screenshot-template = "mpv-%f-%wH.%wM.%wS-#%#00n";
       screenshot-directory = "~/Pictures/Screenshots/MPV";
       
       # OSD and interface
@@ -80,10 +79,19 @@
       keepaspect-window = true;
       keep-open = "always";
       border = true;
-      title = "mpv";
+      title = "\${filename} - mpv";
       
-      # Allow remote control via IPC
-      input-ipc-server = "/tmp/mpvsocket";
+      # Script config
+      script-opts = "osc-title=\${filename},osc-boxalpha=150,osc-visibility=never,osc-boxvideo=yes";
+    };
+    
+    profiles = {
+      "extension.webm" = {
+        loop-file = "inf";
+      };
+      "extension.gif" = {
+        loop-file = "inf";
+      };
     };
   };
 }
