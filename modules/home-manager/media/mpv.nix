@@ -4,34 +4,36 @@
   programs.mpv = {
     enable = true;
 
-    # --- Package Configuration ---
-    # Use the unwrapped mpv to customize support for different systems
-    package = (pkgs.mpv-unwrapped.wrapper {
-      # Add scripts from nixpkgs
-      scripts = with pkgs.mpvScripts; [ 
-        sponsorblock-minimal 
-        modernz
-        builtins.autoload
-        dynamic-crop # shift+c to toggle mode
-      ];
-      
-      # Override the base mpv package to enable specific features
-      mpv = pkgs.mpv-unwrapped.override {
+    package = pkgs.mpv.override {
+      mpv-unwrapped = pkgs.mpv-unwrapped.override {
         waylandSupport = true;
-        pipewireSupport = true; 
-        
-        vaapiSupport = true;    # For Intel/AMD GPUs
-
-        bluraySupport = true; 
-        cddaSupport = false; 
-        dvdnavSupport = false; 
+        x11Support = false;
+        pipewireSupport = true;
+        pulseSupport = false;
+        vaapiSupport = true;
+        vdpauSupport = false;
+        vulkanSupport = true;
+        bluraySupport = true;
+        cddaSupport = false;
+        dvdnavSupport = false;
         openalSupport = false;
         sdl2Support = true;
         javascriptSupport = false;
         archiveSupport = false;
         zimgSupport = false;
       };
-    });
+
+      # Scripts are now passed here instead of using a wrapper
+      scripts = with pkgs.mpvScripts; [
+        sponsorblock-minimal 
+        modernz
+        autoload
+        autodeint
+        dynamic-crop
+        visualizer
+        thumbfast
+      ];
+    };
 
     config = {
       profile = "high-quality";
@@ -40,7 +42,9 @@
       
       cache-default = 4000000;
       
-      hwdec = "auto-safe";
+      hwdec = "vaapi";
+      gpu-api = "vulkan";
+      vo = "gpu-next";
       
       ontop = false;
       
@@ -65,7 +69,7 @@
       # Screenshots
       screenshot-format = "png";
       screenshot-template = "mpv-%F_%T";
-      screenshot-directory = "$HOME/Pictures/Screenshots/MPV"
+      screenshot-directory = "$HOME/Pictures/Screenshots/MPV";
       
       # OSD and interface
       osd-level = 1;
@@ -77,10 +81,6 @@
       keep-open = "always";
       border = true;
       title = "mpv";
-      
-      # Performance
-      demuxer-max-bytes = 400M;
-      demuxer-max-back-bytes = 200M;
       
       # Allow remote control via IPC
       input-ipc-server = "/tmp/mpvsocket";
